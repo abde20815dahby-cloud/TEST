@@ -1,0 +1,27 @@
+/* المحول */
+.tool-shell[data-tool="converter"] {
+    --tool-accent: #38bdf8;
+}
+
+.tool-shell[data-tool="converter"] .workspace-card {
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.tool-shell[data-tool="converter"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #38bdf8, #0ea5e9);
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="converter"] .section-title {
+    background: linear-gradient(120deg, #fff, #7dd3fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

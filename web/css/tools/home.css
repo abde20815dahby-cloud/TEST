@@ -1,0 +1,19 @@
+/* لوحة القيادة — بطاقات الأدوات (مظهر فقط) */
+#homeSection .section-title {
+    background: linear-gradient(120deg, #fff, var(--neon-cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#homeSection .cards-grid .card-3d:nth-child(3n + 1) {
+    border-color: rgba(34, 211, 238, 0.15);
+}
+
+#homeSection .cards-grid .card-3d:nth-child(3n + 2) {
+    border-color: rgba(192, 132, 252, 0.15);
+}
+
+#homeSection .cards-grid .card-3d:nth-child(3n + 3) {
+    border-color: rgba(52, 211, 153, 0.15);
+}

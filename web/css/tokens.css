@@ -1,0 +1,23 @@
+/**
+ * تصميم الطبقة — تغيير الألوان والظلال هنا يحدّث المظهر كاملاً
+ */
+:root {
+    --bg-void: #030508;
+    --bg-panel: rgba(8, 12, 22, 0.72);
+    --neon-cyan: #22d3ee;
+    --neon-purple: #c084fc;
+    --neon-magenta: #e879f9;
+    --neon-green: #34d399;
+    --neon-amber: #fbbf24;
+    --neon-rose: #fb7185;
+    --glass-panel: rgba(255, 255, 255, 0.035);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #f1f5f9;
+    --text-muted: #94a3b8;
+    --font-display: "Tajawal", "Cairo", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "Cascadia Code", "Consolas", monospace;
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --shadow-elevated: 0 28px 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+}

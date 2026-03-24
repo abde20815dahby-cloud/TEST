@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANCFCC PRO — منصة الإنهاء الطبوغرافي</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+
+    <div id="waitingOverlay" class="waiting-overlay">
+        <div class="waiting-box">
+            <div class="waiting-spinner"></div>
+            <p>جاري فتح نافذة الاختيار...</p>
+            <p class="waiting-hint">انتظر - لا تضغط مرة أخرى</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-wrapper">
+                <img id="logoImg" src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';">
+                <div id="logoFallback" class="logo-fallback" style="display:none"><i class="fa-solid fa-drafting-compass"></i></div>
+            </div>
+            <span class="logo-text">الهندسة الطبوغرافية - الإنهاء الخارق</span>
+        </div>
+        <nav>
+            <a href="#" class="active" onclick="backToHome(); return false;">لوحة القيادة</a>
+            <a href="#" onclick="futureToolNotice('TBC'); return false;">TBC</a>
+            <a href="#" onclick="openToolPage('tool-kgo'); return false;">KGO</a>
+            <a href="#" onclick="futureToolNotice('AUTOCAD'); return false;">AUTOCAD</a>
+        </nav>
+    </header>
+
+    <section class="hero dashboard-home" id="dashboardHome">
+        <div class="hero-text">
+            <div class="glass-badge"><i class="fa-solid fa-ruler-combined"></i> منصة المهندسين الطبوغرافيين</div>
+            <h1 class="gradient-text">الهندسة الطبوغرافية<br><span class="sub-title">الإنهاء الخارق</span></h1>
+            <p>تنظيف وتدقيق ومصادقة ملفات التحديد بدقة طبوغرافية. عزل الملفات الدخيلة، فحص النواقص، الختم، التحويل والتصدير.</p>
+            <div class="path-box">
+                <button class="path-btn" onclick="pickProjectFolder()"><i class="fa-solid fa-folder-open"></i> تحديد مجلد المشروع</button>
+                <span id="projectPathHero">لا يوجد مسار محدد حاليا</span>
+            </div>
+            <div class="hero-buttons">
+                <button id="launchBtn" class="shimmer-btn" onclick="openSequentialModal()">
+                    <span class="text">⚙️ تشغيل تسلسلي للأدوات</span>
+                    <i class="fa-solid fa-list-check"></i>
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-core topo-core">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+                <i class="fa-solid fa-drafting-compass core-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="homeSection">
+        <h2 class="section-title">لوحة الأدوات الطبوغرافية</h2>
+        <div class="cards-grid">
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper cyan-glow"><i class="fa-solid fa-ruler-combined"></i></div><h3>نظام التدقيق الذكي</h3><p>تنظيف الملفات الدخيلة وفحص النواقص والتدقيق الشامل.</p><button class="tool-btn primary" onclick="openToolPage('tool-main')">الدخول</button></div></div>
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper purple-glow"><i class="fa-solid fa-stamp"></i></div><h3>وحدة المصادقة ZN</h3><p>معاينة PDF واختيار موضع الختم تفاعلياً.</p><button class="tool-btn primary" onclick="openToolPage('tool-stamper')">الدخول</button></div></div>
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper green-glow"><i class="fa-solid fa-file-lines"></i></div><h3>المعالج PV</h3><p>تحويل ودمج وفرز محاضر التحديد.</p><button class="tool-btn primary" onclick="openToolPage('tool-pv')">الدخول</button></div></div>
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper cyan-glow"><i class="fa-solid fa-satellite-dish"></i></div><h3>KGO ToRinex</h3><p>تحويل ملفات GNSS الخام إلى RINEX عبر ToRinex4 تلقائياً.</p><button class="tool-btn primary" onclick="openToolPage('tool-kgo')">الدخول</button></div></div>
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper cyan-glow"><i class="fa-solid fa-repeat"></i></div><h3>المحول الشامل</h3><p>تحويل Word وExcel إلى PDF.</p><button class="tool-btn primary" onclick="openToolPage('tool-converter')">الدخول</button></div></div>
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper purple-glow"><i class="fa-solid fa-scissors"></i></div><h3>مقص الخرائط</h3><p>تقطيع خرائط PDF إلى أجزاء.</p><button class="tool-btn primary" onclick="openToolPage('tool-splitter')">الدخول</button></div></div>
+            <div class="card-3d" data-tilt data-tilt-glare data-tilt-max-glare="0.4" data-tilt-max="15" data-tilt-speed="400"><div class="card-content"><div class="icon-wrapper green-glow"><i class="fa-solid fa-drafting-compass"></i></div><h3>DXF / Acme CAD</h3><p>تشغيل محرك Acme CAD للتحويل.</p><button class="tool-btn primary" onclick="openToolPage('tool-dxf')">الدخول</button></div></div>
+        </div>
+    </section>
+
+    <div id="sequentialModal" class="modal-overlay">
+        <div class="modal-content sequential-modal">
+            <h3>تشغيل تسلسلي للأدوات</h3>
+            <p class="modal-desc">اضغط على كل أداة بالترتيب الذي تريده: أول ضغطة = رقم 1، ثاني ضغطة = رقم 2، وهكذا</p>
+            <div class="sequential-two-cols">
+                <div class="sequential-available">
+                    <h4>الأدوات المتاحة (اضغط للإضافة)</h4>
+                    <div id="sequentialAvailable" class="sequential-btns"></div>
+                </div>
+                <div class="sequential-ordered">
+                    <h4>الترتيب المحدد</h4>
+                    <div id="sequentialOrdered" class="sequential-ordered-list"></div>
+                    <button class="tool-btn small" onclick="clearSequentialOrder()">🗑 مسح الترتيب</button>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="tool-btn" onclick="closeSequentialModal()">إلغاء</button>
+                <button class="tool-btn primary" onclick="runSequentialTools()">▶ تشغيل بالترتيب</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="stampPreviewModal" class="modal-overlay">
+        <div class="modal-content stamp-preview-modal">
+            <h3 id="stampModalTitle">معاينة واختيار موضع الختم</h3>
+            <p id="stampModalSubtitle" class="stamp-preview-hint">الصفحة كاملة مصغّرة — اسحب صورة الختم للموضع، ثم ضبط العرض والارتفاع أدناه</p>
+            <div class="stamp-preview-area">
+                <div class="stamp-preview-viewport">
+                    <div id="stampPreviewContainer" class="stamp-preview-container">
+                        <div id="stampPreviewInner" class="stamp-preview-inner">
+                            <img id="stampPreviewImg" src="" alt="PDF">
+                            <div id="stampOverlay" class="stamp-overlay">
+                                <img id="stampOverlayImg" class="stamp-overlay-img" src="" alt="" draggable="false">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stamp-size-inputs stamp-size-only">
+                <label>العرض (نقاط PDF) <input type="number" id="stampPreviewW" value="150" min="20" max="2000"></label>
+                <label>الارتفاع (نقاط PDF) <input type="number" id="stampPreviewH" value="80" min="20" max="2000"></label>
+                <div class="stamp-size-sliders">
+                    <label>تعديل عرض الختم (سريع) <input type="range" id="stampPreviewWRange" min="60" max="800" value="150"></label>
+                    <label>تعديل ارتفاع الختم (سريع) <input type="range" id="stampPreviewHRange" min="30" max="500" value="80"></label>
+                </div>
+            </div>
+            <div class="modal-actions stamp-modal-actions">
+                <button type="button" class="tool-btn" onclick="closeStampPreview()">إلغاء</button>
+                <button type="button" class="tool-btn" id="stamp-btn-apply-only" onclick="applyStampPositionOnly()">تطبيق الموضع فقط</button>
+                <button type="button" class="tool-btn primary" id="stamp-btn-stamper-run" onclick="applyStampAndRunAll()">🔏 مصادقة على الكل</button>
+                <button type="button" class="tool-btn primary" id="stamp-btn-missing-batch" style="display:none" onclick="applyMissingBatchStampFromModal()">🔏 تنفيذ الختم الجماعي</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="tool-page tool-shell" id="tool-main" data-tool="audit"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">نظام التدقيق الذكي</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickProjectFolder()"><i class="fa-solid fa-folder-open"></i> تحديد مجلد المشروع</button><span id="projectPathText" class="inline-path">لا يوجد مسار محدد حاليا</span><div class="inline-fields"><button class="tool-btn primary" onclick="runCoreTool('cleaning')">🧹 عزل وتطهير الملفات</button><button class="tool-btn primary" onclick="runCoreTool('missing_check')">🔎 فحص النواقص</button><button class="tool-btn primary" onclick="runCoreTool('auto_validation')">⚡ تدقيق شامل</button></div><hr class="tool-divider"><div class="inline-fields"><button class="tool-btn" onclick="pickToolFolder('zip', 'mainZipPath')">📂 تحديد مجلد ZIP</button><span id="mainZipPath" class="inline-path">غير محدد</span><button class="tool-btn primary" onclick="runZipExportMain()">📦 تصدير الحزم ZIP</button></div></div></section>
+    <section class="tool-page tool-shell" id="tool-missing" data-tool="missing"><button class="back-btn" onclick="backToMissingReport()">← رجوع للتدقيق</button><h2 class="section-title">تقرير النواقص</h2><div class="workspace-card"><p class="missing-stamp-hint">اضغط <strong>ختم جماعي (ZN2)</strong> لفتح المعاينة أولاً؛ بعد ضبط الموضع والحجم اضغط <strong>تنفيذ الختم الجماعي</strong> داخل النافذة (لا يُنفَّذ الختم قبل المعاينة).</p><div class="missing-actions"><button class="tool-btn primary" onclick="copyMissingNumbers()">📋 نسخ أرقام الملفات الناقصة</button><button class="tool-btn primary" onclick="pickRecoveryFolder()">⚡ استرداد من المخزن</button><button class="tool-btn primary" onclick="openStampPreviewFromMissing()">🔏 ختم جماعي (ZN2)</button></div><div id="missingList" class="missing-list"></div><div id="singleView" class="single-view" style="display:none"><h3 id="singleViewTitle"></h3><div id="singleMissingList"></div></div></div></section>
+    <section class="tool-page tool-shell" id="tool-stamper" data-tool="stamper"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">وحدة المصادقة والختم (ZN)</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickToolFolder('stamper', 'stamperPath')">📂 تحديد مجلد الوثائق</button><span id="stamperPath" class="inline-path">غير محدد</span><div id="stamperPreviewBlock" class="stamper-preview-block" style="display:none"><hr class="tool-divider"><h4>معاينة واختيار موضع الختم</h4><p class="stamper-preview-desc">اختر ملف PDF للمعاينة، حرّك الإطار للموضع المطلوب، حدد الحجم، ثم مصادقة على الكل</p><div class="inline-fields"><select id="stampPdfSelect" class="stamp-pdf-select"><option value="">-- اختر ملف PDF --</option></select><button class="tool-btn" onclick="openStampPreviewFromFolder()">👁 معاينة</button></div><p class="stamper-hint-mini">الموضع (X، Y) يُحدَّد من المعاينة بالسحب — أدناه حجم الختم فقط</p><input type="hidden" id="stampX" value="20"><input type="hidden" id="stampY" value="20"><div class="inline-fields"><label class="stamp-wh-label">عرض الختم W <input id="stampW" type="number" value="150" min="20"></label><label class="stamp-wh-label">ارتفاع الختم H <input id="stampH" type="number" value="80" min="20"></label></div><div class="stamper-filter"><label>نطاق الختم:</label><select id="stampFilterMode"><option value="zn_only">ZN فقط</option><option value="all_pdf">كل PDF</option></select></div><div class="stamper-actions"><button class="tool-btn primary" onclick="runAdvanced('stamper')">🔏 مصادقة على الكل</button></div></div><div id="stamperNoFolder" class="stamper-no-folder"><p>حدد مجلد الوثائق أولاً لتفعيل المعاينة</p></div></div></section>
+    <section class="tool-page tool-shell" id="tool-pv" data-tool="pv"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">المعالج المتقدم لمحاضر التحديد (PV)</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickToolFolder('pv', 'pvPath')">📂 تحديد مستودع PV</button><span id="pvPath" class="inline-path">غير محدد</span><button class="tool-btn primary" onclick="runAdvanced('pv')">🚀 تشغيل PV Processor</button></div></section>
+    <section class="tool-page tool-shell" id="tool-kgo" data-tool="kgo"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">KGO ToRinex Converter</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickToolFolder('kgo', 'kgoPath')">📂 تحديد مجلد KGO</button><span id="kgoPath" class="inline-path">غير محدد</span><div class="inline-fields"><label>مسار ToRinex4 EXE <input id="kgoExe" type="text" value="C:\\KolidaKGO\\KGO\\bin\\ToRinex4\\ToRinex4-64.exe" style="min-width:360px"></label></div><p class="stamper-hint-mini">سيتم إنشاء مجلد RINEX_CONVERTED داخل المجلد المحدد ومراقبة اكتمال التحويل تلقائياً.</p><button class="tool-btn primary" onclick="runAdvanced('kgo')">🚀 تشغيل KGO ToRinex</button></div></section>
+    <section class="tool-page tool-shell" id="tool-converter" data-tool="converter"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">المحول الشامل (Word / Excel)</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickToolFolder('converter', 'convPath')">📂 تحديد مجلد التحويل</button><span id="convPath" class="inline-path">غير محدد</span><div class="inline-fields"><select id="paperSize"><option value="A4">A4</option><option value="A3">A3</option></select></div><button class="tool-btn primary" onclick="runAdvanced('converter')">🔄 تشغيل Converter</button></div></section>
+    <section class="tool-page tool-shell" id="tool-splitter" data-tool="splitter"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">مقص الخرائط الذكي (Splitter)</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickSplitPdf('splitPath')">📂 تحديد ملف PDF</button><span id="splitPath" class="inline-path">غير محدد</span><div class="inline-fields"><select id="splitLayout"><option value="2x2">شبكة 2x2</option><option value="4x1">4 صفوف عمودية</option><option value="1x4">4 أعمدة أفقية</option></select></div><button class="tool-btn primary" onclick="runAdvanced('splitter')">✂️ تشغيل Splitter</button></div></section>
+    <section class="tool-page tool-shell" id="tool-dxf" data-tool="dxf"><button class="back-btn" onclick="backToHome()">← رجوع إلى لوحة القيادة</button><h2 class="section-title">المحرك الهندسي لخرائط التحديد (DXF)</h2><div class="workspace-card"><div class="support-strip"><button class="tool-btn" onclick="runSupport('backup_open')">⏪ النسخ الاحتياطية</button><button class="tool-btn" onclick="runSupport('undo')">↩️ تراجع</button><button class="tool-btn" onclick="runSupport('redo')">↪️ إعادة</button></div><button class="tool-btn" onclick="pickAcmeExe('acmePath')">⚙️ تحديد مسار Acme CAD</button><span id="acmePath" class="inline-path">المسار الافتراضي</span><button class="tool-btn primary" onclick="runAdvanced('dxf')">📐 فتح Acme CAD</button><button class="tool-btn" onclick="pickToolFolder('zip', 'zipPath')">📂 تحديد مجلد ZIP</button><span id="zipPath" class="inline-path">غير محدد</span><button class="tool-btn primary" onclick="runZipExport()">📦 تصدير الحزم ZIP</button></div></section>
+
+    <section class="log-section">
+        <div class="log-panel">
+            <div class="log-header">
+                <span class="log-title">سجل التقدم والأحداث</span>
+                <button class="log-clear" onclick="clearLog()">🗑 مسح</button>
+            </div>
+            <div id="liveLog" class="live-log"></div>
+            <div class="status-bar">
+                <span class="status-label">الحالة:</span>
+                <span id="statusText">جاهز.</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/missing.js"></script>
+    <script src="js/stamper.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/sequential.js"></script>
+    <script src="js/init.js"></script>
+</body>
+</html>

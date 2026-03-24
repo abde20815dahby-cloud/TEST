@@ -1,0 +1,35 @@
+/* وحدة المصادقة ZN */
+.tool-shell[data-tool="stamper"] {
+    --tool-accent: #c084fc;
+    --tool-accent-soft: rgba(192, 132, 252, 0.14);
+}
+
+.tool-shell[data-tool="stamper"] .workspace-card {
+    border-color: rgba(192, 132, 252, 0.22);
+    box-shadow: var(--shadow-elevated), 0 0 55px rgba(192, 132, 252, 0.1);
+}
+
+.tool-shell[data-tool="stamper"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #e879f9, #c084fc);
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="stamper"] .section-title {
+    background: linear-gradient(120deg, #fff, #e9d5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.tool-shell[data-tool="stamper"] .stamper-preview-block {
+    padding: 8px 0 0;
+    border-top: 1px solid rgba(192, 132, 252, 0.15);
+    margin-top: 8px;
+}

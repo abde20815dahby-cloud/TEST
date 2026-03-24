@@ -1,0 +1,29 @@
+/* KGO ToRinex */
+.tool-shell[data-tool="kgo"] {
+    --tool-accent: #22d3ee;
+}
+
+.tool-shell[data-tool="kgo"] .workspace-card {
+    border-color: rgba(34, 211, 238, 0.24);
+    box-shadow: var(--shadow-elevated), 0 0 48px rgba(34, 211, 238, 0.09);
+}
+
+.tool-shell[data-tool="kgo"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #22d3ee, #0ea5e9);
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="kgo"] .section-title {
+    background: linear-gradient(120deg, #fff, #67e8f9);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+

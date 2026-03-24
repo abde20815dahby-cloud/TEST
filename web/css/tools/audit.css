@@ -1,0 +1,30 @@
+/* نظام التدقيق الذكي — طبقة مظهر */
+.tool-shell[data-tool="audit"] {
+    --tool-accent: #22d3ee;
+    --tool-accent-soft: rgba(34, 211, 238, 0.12);
+}
+
+.tool-shell[data-tool="audit"] .workspace-card {
+    border-color: rgba(34, 211, 238, 0.18);
+    box-shadow: var(--shadow-elevated), 0 0 50px rgba(34, 211, 238, 0.06);
+}
+
+.tool-shell[data-tool="audit"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--tool-accent), transparent);
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="audit"] .section-title {
+    background: linear-gradient(120deg, #fff, var(--tool-accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

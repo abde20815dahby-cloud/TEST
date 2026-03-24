@@ -1,0 +1,27 @@
+/* مقص الخرائط */
+.tool-shell[data-tool="splitter"] {
+    --tool-accent: #f472b6;
+}
+
+.tool-shell[data-tool="splitter"] .workspace-card {
+    border-color: rgba(244, 114, 182, 0.2);
+}
+
+.tool-shell[data-tool="splitter"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #f472b6, #ec4899);
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="splitter"] .section-title {
+    background: linear-gradient(120deg, #fff, #fbcfe8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

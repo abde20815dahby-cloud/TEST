@@ -1,0 +1,27 @@
+/* DXF / Acme */
+.tool-shell[data-tool="dxf"] {
+    --tool-accent: #fbbf24;
+}
+
+.tool-shell[data-tool="dxf"] .workspace-card {
+    border-color: rgba(251, 191, 36, 0.22);
+}
+
+.tool-shell[data-tool="dxf"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #fbbf24, #d97706);
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="dxf"] .section-title {
+    background: linear-gradient(120deg, #fff, #fde68a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

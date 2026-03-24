@@ -1,0 +1,29 @@
+/* تقرير النواقص */
+.tool-shell[data-tool="missing"] {
+    --tool-accent: #fb7185;
+    --tool-accent-soft: rgba(251, 113, 133, 0.12);
+}
+
+.tool-shell[data-tool="missing"] .workspace-card {
+    border-color: rgba(251, 113, 133, 0.2);
+    box-shadow: var(--shadow-elevated), 0 0 48px rgba(251, 113, 133, 0.07);
+}
+
+.tool-shell[data-tool="missing"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--tool-accent), rgba(251, 113, 133, 0.2));
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="missing"] .section-title {
+    background: linear-gradient(120deg, #fff, #fda4af);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

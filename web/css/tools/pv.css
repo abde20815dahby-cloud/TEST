@@ -1,0 +1,28 @@
+/* المعالج PV */
+.tool-shell[data-tool="pv"] {
+    --tool-accent: #34d399;
+}
+
+.tool-shell[data-tool="pv"] .workspace-card {
+    border-color: rgba(52, 211, 153, 0.2);
+    box-shadow: var(--shadow-elevated), 0 0 45px rgba(52, 211, 153, 0.08);
+}
+
+.tool-shell[data-tool="pv"] .workspace-card::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #34d399, #10b981);
+    pointer-events: none;
+}
+
+.tool-shell[data-tool="pv"] .section-title {
+    background: linear-gradient(120deg, #fff, #6ee7b7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
