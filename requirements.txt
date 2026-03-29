@@ -1,0 +1,5 @@
+eel==0.16.0
+PyMuPDF==1.23.8
+pywin32==306
+pywinauto==0.6.8
+customtkinter==5.2.1
